@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: '돋움';
+            font-size: 14px;
+            color: #444444;
+        }
+        li {
+            list-style-type: none;
+        }
+        .clear {
+            clear: both;
+        }
+        #header_inner {
+            max-width: 1140px;
+            height: 100px;
+            margin: 0 auto;
+        }
+
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;          
+            height: 100px;
+            background-color: #ffffff;
+            z-index: 9999;
+}
+        #logo {
+            float: left;
+            margin: 50px 0 0 50px;
+        }
+        #menus {
+            float: right;
+        }
+        #top_menu {
+            text-align: right;
+            margin-top: 13px;
+            font-size: 10px;
+        }
+        #main_menu {
+            margin-top: 24px;
+            font-family: '맑은고딕';
+            font-size: 17px;
+            color: black;
+        }
+        #main_menu a {
+            text-decoration: none;
+            color: inherit;
+        }
+        #main_menu .active a {
+            color: #1D3A62;
+            font-weight: bold;
+            border-bottom: 2px solid #1D3A62;
+        }
+        #main_menu a:hover {
+            font-weight: bold;
+            color: #1D3A62; 
+        }
+        #main_menu li {
+            display: inline;
+            margin-left: 80px;
+        }
+
+        #main_img {
+            width: 100%;
+            height: 281px;
+            margin-top: 120px;   
+            text-align: center;
+        }
+       #main_img img {
+            width: 100%;
+            height: auto;
+        }
+
+        #contents {
+            max-width: 1140px;   
+            width: 100%;
+            margin: 0 auto;
+        }
+
+       #sub_menu {
+            float: left;
+            width: 234px;
+            margin-top: 23px;
+        }
+        #sub_menu a {
+            display: block;
+            text-decoration: none;
+            color: inherit;      
+        }
+        #sub_menu a:link,
+        #sub_menu a:visited,
+        #sub_menu a:hover,
+        #sub_menu a:active {
+            text-decoration: none;
+            color: inherit;
+        }
+        #sub_menu h3 {
+            font-size: 18px;
+            color: rgb(242, 252, 248);
+            padding: 12px;
+            background-color: #1D3A62;
+        }
+        #sub_menu li {
+            padding: 10px;
+            border-bottom: dotted 1px #cccccc;
+        }
+
+        #main_contents {
+           float: right;
+           width: 75%;       
+           margin-top: 23px;
+           margin-left: 0;
+        }
+        #main_contents h3 {
+            font-size: 22px;
+            padding-bottom: 8px;
+            border-bottom: solid 1px #cccccc;
+        }
+        #main_contents h4 {
+            margin-top: 20px;
+            line-height: 180%;
+        }
+        #main_contents p {
+            margin-top: 30px;
+            line-height: 180%;
+        }
+        #main_contents #figure {
+            margin-top: 30px;
+            text-align: center;
+        }
+        #main_contents #figure img {
+            max-width: 100%;
+            height: auto;
+        }
+        #main_contents li {
+            padding: 5px;
+        }
+
+        footer {
+            width: 100%;
+            height: 150px;
+            margin-top: 30px;
+            background-color: #1D3A62;
+        }
+        #footer_box {
+            max-width: 1140px;
+            width: 100%;
+            height: 150px;
+            margin: 0 auto;
+        }
+        #footer_logo {
+            float: left;
+            margin: 50px 0 0 30px;
+        }
+        #footer_logo img {
+            max-width: 100%;
+            height: auto;
+        }
+        #address {
+            float: right;
+            margin: 50px 30px 0 0;
+            color: white;
+            font-size: 10px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @media (max-width: 1024px) {
+            header {
+                padding: 0 20px;
+            }
+            #main_menu li {
+                margin-left: 40px;
+            }
+        }
+        @media (max-width: 768px) {
+            header {
+                height: auto;
+                padding: 10px 16px;
+            }
+
+            #logo {
+                float: none;
+                margin: 10px 0;
+                text-align: center;
+            }
+            #logo img {
+                max-width: 60%;
+                height: auto;
+            }
+
+            #menus {
+                float: none;
+                text-align: center;
+            }
+
+            #top_menu {
+                margin-top: 5px;
+                font-size: 11px;
+                text-align: center;
+            }
+
+            #main_menu {
+                margin-top: 10px;
+            }
+            #main_menu li {
+                display: inline-block;
+                margin: 4px 8px;
+                font-size: 14px;
+            }
+
+            #contents {
+                padding: 0 16px;
+            }
+            #sub_menu {
+                float: none;
+                width: 100%;
+                margin-top: 20px;
+                position: static;
+            }
+            #sub_menu h3 {
+                text-align: center;
+            }
+            #sub_menu li {
+                padding: 8px 4px;
+            }
+
+            #main_contents {
+                float: none;
+                width: 100%;
+                margin-top: 20px;
+                margin-left: 0;
+            }
+
+            #main_contents h3 {
+                font-size: 18px;
+            }
+            #main_contents h4 {
+                font-size: 15px;
+            }
+            #main_contents p {
+                font-size: 13px;
+            }
+            #footer_box {
+                height: auto;
+                padding-bottom: 16px;
+            }
+            #footer_logo {
+                float: none;
+                margin: 20px auto 10px;
+                text-align: center;
+            }
+            #address {
+                float: none;
+                margin: 0 auto 10px;
+                text-align: center;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="header_inner">
+        <div id="logo">
+            <a href="index6.html"><img src="img/logo.png"></a>
+        </div>
+        <nav id="menus">
+            <div id="top_menu">
+                로그인 | 회원가입 | 공지사항
+            </div>
+            <ul id="main_menu">
+                <li><a href="index.html">앨범소개</a></li>
+                <li><a href="index2.html">노래목록</a></li>
+                <li class="active"><a href="index3.html">나의해석</a></li>
+                <li><a href="index4.html">+ 음악</a></li>
+                <li><a href="index5.html">+ 콘텐츠</a></li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+    <section id="main_img">
+        <img src="img/banner.png">
+    </section>
+    <section id="contents">
+        <nav id="sub_menu">
+            <h3>이미지관</h3>
+            <ul>
+                <li><a href="#basic-info">나만의 해석</a></li>
+                <li><a href="#album-concept">이미지해석</a></li>
+            </ul>
+        </nav>
+        <div id="main_contents">
+            <h3><b>나는 이 앨범을 이렇게 해석했다!</b></h3>
+            <h4 id="basic-info">[나만의 해석]</h4>
+            <p>저는 이 앨범을 <b>“나를 구해줘”에서 “내가 나를 구한다”로 나아가는 이야기</b>라는 한 문장으로 정리할 수 있을 것 같습니다.
+               이렇게 생각한 까닭은 이 앨범이 한 사람의 사랑 → 붕괴 → 분노 → 회복 → 성장으로 이어지는 감정 여정을 따라가며,
+               ‘사랑 앞에 흔들리는 정체성과 자존감’을 가장 솔직한 방식으로 드러내고 있다고 생각하기 때문입니다.</p>
+            <br>
+            <br>
+            <p>초반부 곡들은 질투, 소유욕, 불안, 파괴성 등의 감정을 통해 이별 후 미성숙한 자아를 보여주고, 
+               중반부에 들어서며 자기 반성, 관계 재평가, 상처 드러내기 등으로 감정의 진짜 원인과 마주하며,
+               마지막으로 스스로를 이해하고 사랑하려는 태도가 자리 잡으며, 스스로를 구조하는 결말에 도달합니다.
+               이 앨범이 이러한 과정을 SZA만의 감성으로 잘 풀어냈다고 생각합니다.</p>
+               <br>
+               <br>
+            <p>이러한 감상을 바탕으로 곡을 새롭게 포스터로 시각화하여 나타내 보았습니다.</p>
+                <br>
+                <br>
+            <h4 id="album-concept">[이미지해석]</h4>
+            <div id="figure">
+                <img src="img/3-1.png">
+            </div>
+            <br>
+            <br>
+            <p>우선, 흐릿한 텍스트를 사용하여 <b>불확실함과 흔들리는 자아</b>를 표현하였습니다. 글자를 번지게 표현하여 명확하게 보이지 않게 함으로써,
+                말하지 못한 생각, 흐트러진 감정, 정체성의 혼란을 상징하였습니다.
+            </p>
+            <br>
+            <p>다음으로는 푸른톤의 색을 메인으로 사용하여 <b>외로움과 차가운 현실</b>을 나타내려고 하였습니다.
+               파란계열의 색은 이 앨범의 표지 색을 나타내기도 하고 냉정함, 고독, 감정의 깊이를 떠올리게 해
+               앨범 속 주인공이 겪는 내면의 차가운 바다를 상징하였습니다.
+            </p>
+            <br>
+            <p>또한 타이프라이터 스타일의 글자를 사용하여 <b>상처 난 기록</b>의 느낌을 내려고 했습니다. 
+                거칠고 오래된 타자기 글꼴은 감춰진 생각들이 기록된 일기 같다고 생각했습니다. 
+                이를 통해 쉽게 잊히지 않는 감정의 흔적을 보여주려고 하였습니다. 
+            </p>
+            <br>
+            <p>그리고 많은 곡들 중에 'Open Arms'만 비교적으로 선명하게 표현하여 유일한 희망과 같은 느낌을 주려고 했습니다.
+                혼란 속에서도 어딘가에 남아있는 '받아들임과' '포용' 즉, <b>다시 사랑할 수 있는 마음</b>이 남아있다는 것을 상징하였습니다. 
+            </p>
+            <br>
+            <p>마지막으로 필터의 노이즈감을 사용하여 아물지 않은 상처, 계속 남아있는 마음의 스크래치를 표현하였습니다.
+            </p>
+        </div>
+    </section>
+    <div class="clear"></div> <!--float 속성 해제-->
+    <footer>
+        <div id="footer_box">
+            <div id="footer_logo">
+                <img src="img/logo2.png">
+            </div>
+            <ul id="address">
+                <li>서울시 강남구 삼성동 1234 우:123-1234</li>
+                <li>TEL:031-123-1234 Email : gyqls10526@naver.com</li>
+                <li>COPYRIGHT (C) 루바토 ALL RIGHTS RESERVED</li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
